@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "205541461525",
+    "project_id": "fastbuy-d8d4d",
+    "storage_bucket": "fastbuy-d8d4d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:205541461525:android:5787a2f5967c4e31b7c81c",
+        "android_client_info": {
+          "package_name": "com.example.fastbuy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "205541461525-qjitkihivrnal87k7ihh4jguo1b7kadr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDZVT3ER5a9itP8QE_-UvSkvIZVfWjtpQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "205541461525-qjitkihivrnal87k7ihh4jguo1b7kadr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
