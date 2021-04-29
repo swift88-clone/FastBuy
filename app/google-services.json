@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "205541461525",
-    "project_id": "fastbuy-d8d4d",
-    "storage_bucket": "fastbuy-d8d4d.appspot.com"
+    "project_number": "956401590833",
+    "project_id": "fastbuy1-e5196",
+    "storage_bucket": "fastbuy1-e5196.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:205541461525:android:5787a2f5967c4e31b7c81c",
+        "mobilesdk_app_id": "1:956401590833:android:6eacc8dc591e4c706eeb10",
         "android_client_info": {
           "package_name": "com.example.fastbuy"
         }
       },
       "oauth_client": [
         {
-          "client_id": "205541461525-qjitkihivrnal87k7ihh4jguo1b7kadr.apps.googleusercontent.com",
+          "client_id": "956401590833-lfjtd6gl7j1f7gsnse07f8327hs5uit1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fastbuy",
+            "certificate_hash": "07d991dda8884e80277668c341b6500e148ccf90"
+          }
+        },
+        {
+          "client_id": "956401590833-15kb3piv0oov1bdbpt838lj8g0uvu0dk.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBDZVT3ER5a9itP8QE_-UvSkvIZVfWjtpQ"
+          "current_key": "AIzaSyC_Maa_jq9Ko9GeEMoeBVp5fN6wCD2QVNg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "205541461525-qjitkihivrnal87k7ihh4jguo1b7kadr.apps.googleusercontent.com",
+              "client_id": "956401590833-15kb3piv0oov1bdbpt838lj8g0uvu0dk.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

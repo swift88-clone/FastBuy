@@ -100,7 +100,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful())
                                     {
-                                        Toast.makeText(RegisterActivity.this, "your account creted", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(RegisterActivity.this, "your account created", Toast.LENGTH_SHORT).show();
                                         loadingBar.dismiss();
 
                                         //now send for login

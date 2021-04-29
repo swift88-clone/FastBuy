@@ -8,6 +8,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private String parentDbName = "Users";
     private CheckBox chkBoxRememberMe;
+    private static final String TAG = "MyActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
         else
         {
             loadingBar.setTitle("Login Account");
-            loadingBar.setMessage("Please wait, while we are checking the credintials");
+            loadingBar.setMessage("Please wait, while we are checking the credentials");
             loadingBar.setCanceledOnTouchOutside(false);
             loadingBar.show();
 
@@ -113,16 +115,26 @@ public class LoginActivity extends AppCompatActivity {
         RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                //Toast.makeText(LoginActivity.this, parentDbName + " " + phone, Toast.LENGTH_LONG).show();
+                //Log.d(TAG, "allow " + parentDbName + " " + phone);
                 if(dataSnapshot.child(parentDbName).child(phone).exists())
                 {
-                    Users userData = dataSnapshot.child(parentDbName).child(phone).getValue(Users.class);
+                    //Log.d(TAG, "exists");
+                    Users userData = new Users();
+                    userData.setPhone(dataSnapshot.child(parentDbName).child(phone).child("phone").getValue().toString());
+                    userData.setPassword(dataSnapshot.child(parentDbName).child(phone).child("password").getValue().toString());
 
+                    //Log.d(TAG, dataSnapshot.child(parentDbName).child(phone).child("phone").getValue() + " " + phone);
                     if(userData.getPhone().equals(phone))
                     {
+
+                        //Log.d(TAG, "phone equal");
                         if(userData.getPassword().equals(password))
                         {
+                            Log.d(TAG, "password equal");
                             if(parentDbName.equals("Admins"))
                             {
+                                Log.d(TAG, "1");
                                 Toast.makeText(LoginActivity.this, "Welcome, Admin,....logged in successfully", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
 
@@ -131,24 +143,28 @@ public class LoginActivity extends AppCompatActivity {
                             }
                             else if(parentDbName.equals("Users"))
                             {
+                                Log.d(TAG, "2");
                                 Toast.makeText(LoginActivity.this, "logged in successfully", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
 
-                                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                                startActivity(intent);
+                                //Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                //startActivity(intent);
                             }
                         }
                         else
                         {
+                            Log.d(TAG, "3");
                             Toast.makeText(LoginActivity.this, "Password incorrect", Toast.LENGTH_SHORT).show();
                             loadingBar.dismiss();
                         }
                     }
                 }
                 else {
+                    Log.d(TAG, "4");
                     Toast.makeText(LoginActivity.this, "Account with this number does not exist", Toast.LENGTH_SHORT).show();
                     loadingBar.dismiss();
                 }
+                Log.d(TAG, "end");
             }
 
             @Override
